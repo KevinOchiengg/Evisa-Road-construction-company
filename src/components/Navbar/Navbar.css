@@ -1,0 +1,163 @@
+nav {
+  position: fixed;
+  height: 12vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  background: #f6f9fb;
+  z-index: 10;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 12vh;
+}
+.nav-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.nav-toggle {
+  font-size: 1.5rem;
+  color: #273755;
+  background: transparent;
+  border-color: transparent;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+  margin-right: 20px;
+  outline: none;
+}
+
+.logo {
+  height: 24px;
+  object-fit: contain;
+  margin-left: 20px;
+}
+.logo:hover {
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid #8aabca;
+}
+
+.links li {
+  margin: 1rem 0;
+}
+
+.link {
+  color: #273755;
+  text-transform: uppercase;
+  font-weight: 300;
+  transition: all ease-in-out 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #8aabca;
+}
+
+.links-container {
+  height: 0;
+  overflow: hidden;
+  transition: all ease-in-out 0.3s;
+  background: #f6f9fb;
+}
+.show-container {
+  height: 10rem;
+}
+.burger-wrapper {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  margin-right: 18px;
+}
+
+.burger-wrapper button {
+  border: none;
+  background: transparent;
+  padding: 13px;
+  outline: none;
+}
+
+.burger-wrapper button span {
+  background: #273755;
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 2px;
+  transition: all ease-in-out 0.3s;
+}
+
+.burger-wrapper button span:nth-child(1),
+.burger-wrapper button span:nth-child(2) {
+  margin-bottom: 0.5rem;
+}
+
+.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.open span:nth-child(3) {
+  transform: rotate(45deg);
+  top: -10px;
+}
+
+.open span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 10px;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-center {
+    max-width: 1170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+  .links-container {
+    margin-right: 20px;
+  }
+  .links {
+    flex-direction: row;
+    border: none;
+  }
+  .link {
+    font-weight: 300;
+    margin: 0 1rem;
+  }
+  .nav-header {
+    padding: 0;
+  }
+  .nav-btn {
+    display: none;
+  }
+
+  .logo {
+    height: 30px;
+  }
+  .burger-wrapper {
+    display: none;
+  }
+  .links-container {
+    height: auto !important;
+  }
+  .links {
+    display: flex;
+  }
+
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+}

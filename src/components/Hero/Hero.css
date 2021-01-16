@@ -1,0 +1,133 @@
+.carousel-container {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+#slider-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: var(--transition);
+  opacity: 0;
+  object-fit: contain;
+  padding-top: 200px;
+  padding-bottom: 270px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+#slider-item:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  display: block;
+  background-color: rgba(36, 50, 74, 0.5);
+}
+
+#slider-item.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+#slider-item.lastSlide {
+  transform: translateX(-100%);
+}
+#slider-item.nextSlide {
+  transform: translateX(100%);
+}
+.item-inner {
+  position: relative;
+  z-index: 1;
+  padding-left: 70px;
+  padding-right: 70px;
+  color: #fff;
+}
+.item-inner h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+.item-inner h2 {
+  position: relative;
+  display: inline-block;
+  font-size: 28px;
+  font-style: italic;
+  margin-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.item-inner h2:before {
+  left: 0;
+}
+.item-inner h2:after {
+  right: 0;
+}
+
+.sliderbtn {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  margin: -25px 0 0;
+  padding: 0;
+  font-size: 20px;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.sliderbtn:hover {
+  opacity: 1;
+}
+.prevbtn {
+  left: 60px;
+}
+.nextbtn {
+  right: 60px;
+}
+
+@media (max-width: 991px) {
+  .prevbtn {
+    left: 30px;
+    top: 60%;
+  }
+  .nextbtn {
+    right: 30px;
+    top: 60%;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-container {
+    padding-top: 70px;
+  }
+
+  #slider-item {
+    padding-top: 240px;
+  }
+  #slider-item .item-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #slider-item .item-inner h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+  #slider-item .item-inner h2 {
+    font-size: 24px;
+  }
+
+  .widget-inner h2,
+  .widget-inner h5 {
+    text-align: center;
+  }
+}
