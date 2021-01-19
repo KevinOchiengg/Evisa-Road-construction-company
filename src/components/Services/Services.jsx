@@ -1,35 +1,57 @@
 import React from 'react';
 import styled from 'styled-components';
 import { services } from './ServicesData';
+import image from '../../images/Award.jpg';
 
 const Services = () => {
   return (
-    <Wrapper>
-      <div className='section-center'>
-        <article className='header'>
-          <h3>
-            custom furniture <br /> built only for you
-          </h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-            dolorum debitis consectetur reprehenderit non aliquam voluptates
-            dolore aut vero consequuntur.
-          </p>
-        </article>
-        <div className='services-center'>
-          {services.map((service) => {
-            const { id, icon, title, text } = service;
-            return (
-              <article className='service' key={id}>
-                <span className='icon'>{icon}</span>
-                <h4>{title}</h4>
-                <p>{text}</p>
-              </article>
-            );
-          })}
+    <>
+      <section className='site-main'>
+        <div className='section'>
+          <div className='widget-page-title'>
+            <div
+              className='widget-background'
+              style={{ backgroundImage: `url(${image})` }}
+            ></div>
+            <div className='wrapper-inner'>
+              <h5>GREAT SERVICES JUST FOR YOU</h5>
+              <h1>Our Services</h1>
+              <p>
+                Whether you have a question about feature trials, pricing, need
+                a demo or anything else, Our team is ready to attend to all
+                questions.
+              </p>
+              <Wrapper>
+                <div className='section-center'>
+                  <article className='header'>
+                    <h3>
+                      custom furniture <br /> built only for you
+                    </h3>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Saepe dolorum debitis consectetur reprehenderit non
+                      aliquam voluptates dolore aut vero consequuntur.
+                    </p>
+                  </article>
+                  <div className='services-center'>
+                    {services.map((service) => {
+                      const { id, icon, title, text } = service;
+                      return (
+                        <article className='service' key={id}>
+                          <span className='icon'>{icon}</span>
+                          <h4>{title}</h4>
+                          <p>{text}</p>
+                        </article>
+                      );
+                    })}
+                  </div>
+                </div>
+              </Wrapper>
+            </div>
+          </div>
         </div>
-      </div>
-    </Wrapper>
+      </section>
+    </>
   );
 };
 
@@ -41,7 +63,7 @@ const Wrapper = styled.section`
   padding: 5rem 0;
 
   background: var(--clr-primary-10);
-
+  z-index: 1000;
   .header h3 {
     margin-bottom: 2rem;
   }
@@ -60,6 +82,7 @@ const Wrapper = styled.section`
     text-align: center;
     padding: 2.5rem 2rem;
     border-radius: var(--radius);
+
     p {
       color: var(--clr-primary-2);
     }

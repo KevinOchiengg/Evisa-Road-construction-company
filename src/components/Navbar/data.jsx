@@ -1,7 +1,7 @@
 export const links = [
   {
     id: 1,
-    path: 'root-app',
+    path: '/',
     text: 'home',
   },
   {

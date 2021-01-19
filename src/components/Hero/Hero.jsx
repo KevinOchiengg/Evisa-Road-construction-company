@@ -48,10 +48,15 @@ const Hero = () => {
             >
               <div className='wrapper'>
                 <div className='item-inner'>
+                  <h5>WELCOME TO EVISA</h5>
                   <h1>{title}</h1>
-                  <h2>in Kenya</h2>
                 </div>
               </div>
+
+              <button  class='btn'>
+                BOOK APPOINTMENT
+              </button>
+
               <div
                 className='nextbtn sliderbtn'
                 onClick={() => setIndex(index + 1)}
